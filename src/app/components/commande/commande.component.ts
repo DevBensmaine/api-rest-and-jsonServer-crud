@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommandeService } from '../../services/commande.service';
 import { MyInterface } from 'src/app/models/MyInterface';
+import { ThrowStmt } from '@angular/compiler';
 @Component({
   selector: 'app-commande',
   templateUrl: './commande.component.html',
@@ -8,6 +9,12 @@ import { MyInterface } from 'src/app/models/MyInterface';
 })
 export class CommandeComponent implements OnInit {
   commandeList: MyInterface[] = [];
+  myCommande:any = {
+    id:'',
+    name:'',
+    poids:'',
+    prix:''
+   }
 
   constructor(private commandeService: CommandeService) {}
 
@@ -31,4 +38,13 @@ export class CommandeComponent implements OnInit {
       );
     });
   }
+
+   //@Methode addCommande
+   addCommande(){
+     this.commandeService.postCommande(this.myCommande)
+     .subscribe((commande) => {
+      this.commandeList = [commande ,...this.commandeList]
+     })
+   }
+
 }

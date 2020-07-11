@@ -19,4 +19,9 @@ export class CommandeService {
   delete(id) {
     return this.http.delete(`${this.urlApi}/${id}`);
   }
+
+   //@Methode addCommande
+   postCommande(commande) {
+    return this.http.post<MyInterface>(this.urlApi , commande);
+  }
 }

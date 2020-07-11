@@ -1,40 +1,42 @@
 <h1>Commande</h1>
 <div class="container">
-<form>
-  <div class="form-group">
-    <label for="name">Enter Name</label>
-    <input type="text" name="name" id="name" class="form-control" placeholder="Enter Name" aria-describedby="helpId">
-  </div>
-  <div class="form-group">
-    <label for="poids">Enter poids</label>
-    <input type="text" name="poids" id="poids" class="form-control" placeholder="Enter poids" aria-describedby="helpId">
-  </div>
-  <div class="form-group">
-    <label for="prix">Enter prix</label>
-    <input type="text" name="prix" id="prix" class="form-control" placeholder="Enter Prix" aria-describedby="helpId">
-  </div>
-</form>
+  <form>
+    <div class="form-group">
+      <label for="name">Enter Name</label>
+      <input type="text" name="name" id="name" [(ngModel)] = "myCommande.name"  class="form-control" placeholder="Enter Name" aria-describedby="helpId">
+    </div>
+    <div class="form-group">
+      <label for="poids">Enter poids</label>
+      <input type="text" name="poids" id="poids" [(ngModel)] = "myCommande.poids"   class="form-control" placeholder="Enter poids"
+        aria-describedby="helpId">
+    </div>
+    <div class="form-group">
+      <label for="prix">Enter prix</label>
+      <input type="text" name="prix" id="prix" [(ngModel)] = "myCommande.prix"    class="form-control" placeholder="Enter Prix" aria-describedby="helpId">
+    </div>
+    <button class="btn btn-primary mr-lg-5 m-lg-2" (click)="addCommande()" type="button"> Add </button>
+  </form>
 
-<table class="table table-success">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>poids</th>
-      <th>prix</th>
-      <th></th>
-    </tr>
-  </thead>
+  <table class="table table-success">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>poids</th>
+        <th>prix</th>
+        <th></th>
+      </tr>
+    </thead>
     <tbody>
-      <tr *ngFor ="let commande of commandeList" >
+      <tr *ngFor="let commande of commandeList">
         <td>{{ commande.id }}</td>
         <td>{{ commande.name }}</td>
         <td>{{ commande.poids }}</td>
         <td>{{ commande.prix }}</td>
         <td>
-          <button class="btn btn-danger" (click) ="deleteCommande(commande.id)"> Delete </button>
+          <button class="btn btn-danger" (click)="deleteCommande(commande.id)"> Delete </button>
         </td>
       </tr>
     </tbody>
-</table>
+  </table>
 </div>
