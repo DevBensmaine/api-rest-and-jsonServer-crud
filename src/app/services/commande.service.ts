@@ -1,18 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
-import { MyInterface } from '../models/MyInterface'
+import { HttpClient } from '@angular/common/http';
+import { MyInterface } from '../models/MyInterface';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CommandeService {
+  urlApi = 'http://localhost:5000/commandes';
 
-  urlApi = "http://localhost:5000/commandes"
+  constructor(private http: HttpClient) {}
 
-  constructor(private http :HttpClient) { }
-
+  //CRUD
+  //@Methode Get
   getAll() {
-     return this.http.get<MyInterface[]>(this.urlApi)
+    return this.http.get<MyInterface[]>(this.urlApi);
   }
 
-
+  //@Methode Delete
+  delete(id) {
+    return this.http.delete(`${this.urlApi}/${id}`);
+  }
 }
