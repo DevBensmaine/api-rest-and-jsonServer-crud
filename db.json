@@ -1,0 +1,22 @@
+{
+  "commandes" : [
+    {
+      "id":1,
+      "name":"sablé",
+      "poids":"1/2kg",
+      "prix":"120dh"
+    },
+    {
+      "id":2,
+      "name":"ghriba",
+      "poids":"1/2kg",
+      "prix":"150dh"
+    },
+    {
+      "id":3,
+      "name":"fakass",
+      "poids":"1/2kg",
+      "prix":"160dh"
+    }
+  ]
+}
