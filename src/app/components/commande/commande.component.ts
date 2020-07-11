@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { CommandeService } from '../../services/commande.service'
+import { MyInterface } from 'src/app/models/MyInterface';
 @Component({
   selector: 'app-commande',
   templateUrl: './commande.component.html',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommandeComponent implements OnInit {
 
-  constructor() { }
+  commandeList:MyInterface[] = [];
+
+  constructor(private commandeService:CommandeService) { }
 
   ngOnInit(): void {
+
   }
 
+  getCommande(){
+    this.commandeService.getAll()
+                        .subscribe(data => {
+                          this.commandeList = data
+                        })
+  }
 }
