@@ -6,10 +6,12 @@ import { MyInterface } from '../models/MyInterface'
 })
 export class CommandeService {
 
+  urlApi = "http://localhost:5000/commandes"
+
   constructor(private http :HttpClient) { }
 
   getAll() {
-     return this.http.get<MyInterface[]>('http://localhost:5000/commandes')
+     return this.http.get<MyInterface[]>(this.urlApi)
   }
 
 

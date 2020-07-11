@@ -1,4 +1,6 @@
 <h1>Commande</h1>
+<div class="container">
+<form>
   <div class="form-group">
     <label for="name">Enter Name</label>
     <input type="text" name="name" id="name" class="form-control" placeholder="Enter Name" aria-describedby="helpId">
@@ -11,3 +13,24 @@
     <label for="prix">Enter prix</label>
     <input type="text" name="prix" id="prix" class="form-control" placeholder="Enter Prix" aria-describedby="helpId">
   </div>
+</form>
+
+<table class="table table-success">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>poids</th>
+      <th>prix</th>
+    </tr>
+  </thead>
+    <tbody>
+      <tr *ngFor ="let commande of commandeList" >
+        <td>{{ commande.id }}</td>
+        <td>{{ commande.name }}</td>
+        <td>{{ commande.poids }}</td>
+        <td>{{ commande.prix }}</td>
+      </tr>
+    </tbody>
+</table>
+</div>

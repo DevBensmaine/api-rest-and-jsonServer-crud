@@ -13,7 +13,7 @@ export class CommandeComponent implements OnInit {
   constructor(private commandeService:CommandeService) { }
 
   ngOnInit(): void {
-
+    this.getCommande();
   }
 
   getCommande(){
