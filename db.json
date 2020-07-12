@@ -1,22 +1,28 @@
 {
   "commandes": [
     {
-      "id": 2,
-      "name": "ghriba",
-      "poids": "1/2kg",
-      "prix": "150dh"
-    },
-    {
       "id": 3,
-      "name": "fakass",
+      "name": "fakassa",
       "poids": "1/2kg",
-      "prix": "160dh"
+      "prix": "160dhs"
     },
     {
       "id": 4,
       "name": "piece",
       "poids": "10kg",
-      "prix": "21"
+      "prix": "21dh"
+    },
+    {
+      "id": 5,
+      "name": "HASSAN BENSMAINE",
+      "poids": "dsds",
+      "prix": "dsds"
+    },
+    {
+      "id": 6,
+      "name": "asdsd",
+      "poids": "dsds",
+      "prix": "1212"
     }
   ]
 }

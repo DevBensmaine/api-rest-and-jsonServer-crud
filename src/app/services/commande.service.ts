@@ -24,4 +24,10 @@ export class CommandeService {
    postCommande(commande) {
     return this.http.post<MyInterface>(this.urlApi , commande);
   }
-}
+
+   //@Methode updateCommande
+    updateCommande(commande){
+      return this.http.put(`${this.urlApi}/${commande.id}`,commande)
+    }
+  }
+

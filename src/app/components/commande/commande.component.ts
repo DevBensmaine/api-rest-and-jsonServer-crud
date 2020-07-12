@@ -9,6 +9,7 @@ import { ThrowStmt } from '@angular/compiler';
 })
 export class CommandeComponent implements OnInit {
   commandeList: MyInterface[] = [];
+  showBtn = false;
   myCommande:any = {
     id:'',
     name:'',
@@ -45,6 +46,34 @@ export class CommandeComponent implements OnInit {
      .subscribe((commande) => {
       this.commandeList = [commande ,...this.commandeList]
      })
+     this.clearInput();
+   }
+
+      //@Methode updateCommande
+    updateCommande(commande) {
+      this.myCommande = commande;
+      this.showBtn = true;
+    }
+    updateCommandeService(){
+      this.commandeService.updateCommande(this.myCommande)
+      .subscribe(() => {
+        this.clearInput();
+        this.showBtn = !this.showBtn;
+      })
+
+    }
+
+
+
+   //Clear input
+
+   clearInput(){
+     this.myCommande = {
+      id:'',
+      name:'',
+      poids:'',
+      prix:''
+     }
    }
 
 }
